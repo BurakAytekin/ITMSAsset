@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "995980700171",
+    "project_id": "itmsasset",
+    "storage_bucket": "itmsasset.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:995980700171:android:3898588206d7772ed0b50e",
+        "android_client_info": {
+          "package_name": "com.batuaksu.information_technology"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "995980700171-p6jfn129gr13898p47k074hobfklic38.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCHwCe7eYlwmkn4sm5_YhVVP7ptHvhGt70"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "995980700171-p6jfn129gr13898p47k074hobfklic38.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

@@ -59,7 +59,7 @@ class _HomeScreenState extends State<HomeScreen> {
                                 future: AddCategoryApi.getAssetCategoryExamples(
                                     category: "Fiziksel",
                                     assetCategory:
-                                        snapshot.data[index].get("title")),
+                                    snapshot.data[index].get("title")),
                                 builder: (context, snapshot) {
                                   switch (snapshot.connectionState) {
                                     case ConnectionState.waiting:
@@ -78,6 +78,15 @@ class _HomeScreenState extends State<HomeScreen> {
                                           itemCount: snapshot.data.length,
                                           itemBuilder: (context, index) {
                                             return ListTile(
+                                              onTap: () {
+                                                Navigator.pushNamed(context, "/detail", arguments: {
+                                                  "title": snapshot.data[index].get("title") ?? "",
+                                                  "purchase_date": snapshot.data[index].get("purchase_date") ?? "",
+                                                  "price": snapshot.data[index].get("price") ?? "",
+                                                  "spec": snapshot.data[index].get("spec") ?? "",
+                                                  "warranty_year": snapshot.data[index].get("warranty_year") ?? "",
+                                                });
+                                              },
                                               title: Text(
                                                 '${snapshot.data[index].get("title")}',
                                                 style: TextStyle(
@@ -127,9 +136,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               FutureBuilder<List<DocumentSnapshot>>(
                                 future: AddCategoryApi.getAssetCategoryExamples(
-                                    category: "Fiziksel",
+                                    category: "Dijital",
                                     assetCategory:
-                                        snapshot.data[index].get("title")),
+                                    snapshot.data[index].get("title")),
                                 builder: (context, snapshot) {
                                   switch (snapshot.connectionState) {
                                     case ConnectionState.waiting:
@@ -148,6 +157,16 @@ class _HomeScreenState extends State<HomeScreen> {
                                           itemCount: snapshot.data.length,
                                           itemBuilder: (context, index) {
                                             return ListTile(
+                                              onTap: () {
+                                                Navigator.pushNamed(context, "/detail", arguments: {
+                                                  "title": snapshot.data[index].get("title") ?? "",
+                                                  "purchase_date": snapshot.data[index].get("purchase_date") ?? "",
+                                                  "end_date": snapshot.data[index].get("end_date") ?? "",
+                                                  "price": snapshot.data[index].get("price") ?? "",
+                                                  "spec": snapshot.data[index].get("spec") ?? "",
+                                                  "brand": snapshot.data[index].get("brand") ?? "",
+                                                });
+                                              },
                                               title: Text(
                                                 '${snapshot.data[index].get("title")}',
                                                 style: TextStyle(
@@ -172,7 +191,7 @@ class _HomeScreenState extends State<HomeScreen> {
             ),
             FutureBuilder<List<DocumentSnapshot>>(
               future:
-                  AddCategoryApi.getAssetCategory(category: "İnsan kaynağı"),
+              AddCategoryApi.getAssetCategory(category: "İnsan kaynağı"),
               builder: (context, snapshot) {
                 switch (snapshot.connectionState) {
                   case ConnectionState.waiting:
@@ -198,9 +217,9 @@ class _HomeScreenState extends State<HomeScreen> {
                             children: <Widget>[
                               FutureBuilder<List<DocumentSnapshot>>(
                                 future: AddCategoryApi.getAssetCategoryExamples(
-                                    category: "Fiziksel",
+                                    category: "İnsan kaynağı",
                                     assetCategory:
-                                        snapshot.data[index].get("title")),
+                                    snapshot.data[index].get("title")),
                                 builder: (context, snapshot) {
                                   switch (snapshot.connectionState) {
                                     case ConnectionState.waiting:
@@ -219,6 +238,17 @@ class _HomeScreenState extends State<HomeScreen> {
                                           itemCount: snapshot.data.length,
                                           itemBuilder: (context, index) {
                                             return ListTile(
+                                              onTap: () {
+                                                Navigator.pushNamed(context, "/detail", arguments: {
+                                                  "title": snapshot.data[index].get("title") ?? "",
+                                                  "name": snapshot.data[index].get("name") ?? "",
+                                                  "age": snapshot.data[index].get("age") ?? "",
+                                                  "birth_date": snapshot.data[index].get("birth_date") ?? "",
+                                                  "department": snapshot.data[index].get("department") ?? "",
+                                                  "salary": snapshot.data[index].get("salary") ?? "",
+                                                  "spec": snapshot.data[index].get("spec") ?? "",
+                                                });
+                                              },
                                               title: Text(
                                                 '${snapshot.data[index].get("title")}',
                                                 style: TextStyle(

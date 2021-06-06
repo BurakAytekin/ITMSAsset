@@ -72,4 +72,14 @@ class AddCategoryApi {
       return snapshot.docs;
     });
   }
+
+  static Future<void> addDijital(
+  {@required title, @required name, @required startDate, @required endDate}) async {
+    CollectionReference collection = FirebaseFirestore.instance.collection("categories");
+    var snapshot = await collection.doc("Dijital").collection("asset_categories").doc("Lisans").collection("asset_examples").where("title", isEqualTo: title).limit(1).get();
+    if (snapshot.docs.isNotEmpty) {
+      snapshot.docs[0].reference.update({'use_by':name, 'use_end':endDate, 'use_start':startDate});
+    }
+  }
+
 }

@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:information_technology/widgets/custom_dialog.dart';
+import 'package:information_technology/widgets/custom_dialog_dijital.dart';
+import 'package:information_technology/widgets/custom_fab.dart';
 
 class DetailScreen extends StatefulWidget {
   @override
@@ -55,6 +58,34 @@ class _DetailScreenState extends State<DetailScreen> {
     var salary = false;
     if (data["salary"] != null)
       salary = true;
+
+    var useBy = false;
+    if (data["use_by"] != null && data["use_by"] != "")
+      useBy = true;
+
+    var useStart = false;
+    if (data["use_start"] != null && data["use_start"] != "")
+      useStart = true;
+
+    var useEnd = false;
+    if (data["use_end"] != null && data["use_end"] != "")
+      useEnd = true;
+
+    var debt = false;
+    if (data["debt"] != null && data["debt"] != "")
+      debt = true;
+
+    var debtBy = false;
+    if (data["debt_by"] != null && data["debt_by"] != "")
+      debtBy = true;
+
+    var debtStart = false;
+    if (data["debt_start"] != null && data["debt_start"] != "")
+      debtStart = true;
+
+    var debtEnd = false;
+    if (data["debt_end"] != null && data["debt_end"] != "")
+      debtEnd = true;
 
     return Scaffold(
       appBar: AppBar(
@@ -450,6 +481,272 @@ class _DetailScreenState extends State<DetailScreen> {
                     ],
                   ),
                   visible: salary,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.person,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Use by",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["use_by"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: useBy,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.date_range_outlined,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Use start date",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["use_start"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: useStart,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.date_range_outlined,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Use end date",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["use_end"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: useEnd,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.person_add_alt,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Debt",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["debt"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: debt,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.person,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Debt by",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["debt_by"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: debtBy,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.date_range_outlined,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Debt start date",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["debt_start"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: debtStart,
+                ),
+                Visibility(
+                  child: Column(
+                    children: [
+                      Row(
+                        children: [
+                          Padding(
+                            padding: const EdgeInsets.fromLTRB(0, 0, 10, 0),
+                            child: Icon(
+                                Icons.date_range_outlined,
+                                color: Colors.lightBlue
+                            ),
+                          ),
+                          Column(
+                            crossAxisAlignment: CrossAxisAlignment.start,
+                            children: [
+                              Text(
+                                "Debt end date",
+                                style: TextStyle(
+                                    fontSize: 14,
+                                    fontWeight: FontWeight.bold,
+                                    color: Colors.lightBlue
+                                ),
+                              ),
+                              Text(
+                                data["debt_end"] ?? "",
+                                style: TextStyle(
+                                    fontSize: 14
+                                ),
+                              )
+                            ],
+                          )
+                        ],
+                      ),
+                      SizedBox(height: 20),
+                    ],
+                  ),
+                  visible: debtEnd,
                 )
               ],
             ),
@@ -458,10 +755,16 @@ class _DetailScreenState extends State<DetailScreen> {
               style: TextStyle(
                 fontSize: 16
               ),
-            )
+            ),
           ],
         ),
       ),
+      floatingActionButton : warrantyYear && !debt ?  CustomDialog(
+        label: "Zimmetle",
+      ) : brand && !useBy ? CustomDialogDijital(
+        label: "Entegre et",
+        title: data["title"],
+      ) : Container()
     );
   }
 

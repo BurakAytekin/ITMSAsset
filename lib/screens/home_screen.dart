@@ -85,6 +85,10 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   "price": snapshot.data[index].get("price") ?? "",
                                                   "spec": snapshot.data[index].get("spec") ?? "",
                                                   "warranty_year": snapshot.data[index].get("warranty_year") ?? "",
+                                                  "debt_by": snapshot.data[index].get("debt_by") ?? "",
+                                                  "debt_end": snapshot.data[index].get("debt_end") ?? "",
+                                                  "debt_start": snapshot.data[index].get("debt_start") ?? "",
+                                                  "debt": snapshot.data[index].get("debt") ?? "",
                                                 });
                                               },
                                               title: Text(
@@ -165,6 +169,9 @@ class _HomeScreenState extends State<HomeScreen> {
                                                   "price": snapshot.data[index].get("price") ?? "",
                                                   "spec": snapshot.data[index].get("spec") ?? "",
                                                   "brand": snapshot.data[index].get("brand") ?? "",
+                                                  "use_by": snapshot.data[index].get("use_by") ?? "",
+                                                  "use_end": snapshot.data[index].get("use_end") ?? "",
+                                                  "use_start": snapshot.data[index].get("use_start") ?? "",
                                                 });
                                               },
                                               title: Text(
